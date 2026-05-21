@@ -1,0 +1,5 @@
+/* 下单页样式 */
+.picker-value { padding: 20rpx 0; font-size: 28rpx; color: #333; }
+.total-price { display: flex; justify-content: space-between; font-size: 30rpx; }
+.price-value { color: #F5222D; font-weight: 600; font-size: 36rpx; }
+.bottom-bar { position: fixed; left: 0; right: 0; bottom: 0; background: #FFF; padding: 20rpx 24rpx; box-shadow: 0 -2rpx 12rpx rgba(0,0,0,0.06); }

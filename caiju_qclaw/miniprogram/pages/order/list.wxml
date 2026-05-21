@@ -1,0 +1,21 @@
+<!-- 订单列表页 -->
+<view class="page">
+  <!-- Tab 切换 -->
+  <view class="tabs">
+    <block wx:for="{{tabs}}" wx:key="index">
+      <view class="tab-item {{currentTab === index ? 'active' : ''}}" bindtap="onTabChange" data-index="{{index}}">
+        {{item}}
+      </view>
+    </block>
+  </view>
+
+  <!-- 订单列表 -->
+  <view class="order-list">
+    <block wx:for="{{orders}}" wx:key="id">
+      <order-card order="{{item}}" bind:tap="onOrderTap" bind:action="onOrderAction"></order-card>
+    </block>
+  </view>
+
+  <empty-state wx:if="{{!loading && orders.length === 0}}" text="暂无订单"></empty-state>
+  <loading loading="{{loading}}"></loading>
+</view>

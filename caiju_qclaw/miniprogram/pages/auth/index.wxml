@@ -1,0 +1,38 @@
+<!-- 登录授权页 -->
+<view class="auth-page">
+  <!-- Logo -->
+  <view class="logo-section">
+    <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+    <view class="app-name">裁局</view>
+    <view class="app-slogan">专业正装定制 · 彰显个人风采</view>
+  </view>
+
+  <!-- 授权按钮 -->
+  <view class="auth-section">
+    <button 
+      class="auth-btn primary" 
+      bindtap="onGetUserProfile"
+      loading="{{loading}}"
+      disabled="{{loading}}"
+    >
+      微信一键登录
+    </button>
+    
+    <!-- 手机号绑定（可选） -->
+    <button 
+      class="auth-btn secondary"
+      open-type="getPhoneNumber"
+      bindgetphonenumber="onPhoneNumber"
+    >
+      绑定手机号（可选）
+    </button>
+  </view>
+
+  <!-- 用户协议 -->
+  <view class="agreement">
+    <text>登录即表示同意</text>
+    <text class="link">《用户协议》</text>
+    <text>和</text>
+    <text class="link">《隐私政策》</text>
+  </view>
+</view>

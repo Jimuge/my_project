@@ -1,0 +1,85 @@
+/* 首页样式 */
+.page-index {
+  min-height: 100vh;
+  background-color: #F5F5F5;
+  padding-bottom: 40rpx;
+}
+
+/* 轮播图 */
+.banner-swiper {
+  width: 100%;
+  height: 360rpx;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 分类区域 */
+.category-section {
+  background-color: #FFFFFF;
+  padding: 32rpx 24rpx;
+  margin-bottom: 24rpx;
+}
+
+.category-grid {
+  display: flex;
+  justify-content: space-around;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-icon {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48rpx;
+  margin-bottom: 12rpx;
+}
+
+.category-name {
+  font-size: 26rpx;
+  color: #333333;
+}
+
+/* 热门款式 */
+.hot-section {
+  padding: 0 24rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32rpx 0 24rpx;
+}
+
+.section-title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #333333;
+}
+
+.section-more {
+  font-size: 26rpx;
+  color: #999999;
+}
+
+.style-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24rpx;
+}
+
+.style-list style-card {
+  width: calc(50% - 12rpx);
+}

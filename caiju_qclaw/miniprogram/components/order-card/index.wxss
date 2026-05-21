@@ -1,0 +1,128 @@
+/* 订单卡片组件样式 */
+.order-card {
+  background-color: #FFFFFF;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+}
+
+/* 订单头部 */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #F0F0F0;
+}
+
+.order-no {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.order-status {
+  font-size: 24rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+/* 状态颜色 */
+.status-pending {
+  background-color: rgba(250, 173, 20, 0.1);
+  color: #FAAD14;
+}
+
+.status-processing {
+  background-color: rgba(24, 144, 255, 0.1);
+  color: #1890FF;
+}
+
+.status-completed {
+  background-color: rgba(82, 196, 26, 0.1);
+  color: #52C41A;
+}
+
+.status-cancelled {
+  background-color: rgba(153, 153, 153, 0.1);
+  color: #999999;
+}
+
+/* 订单主体 */
+.order-body {
+  display: flex;
+  padding: 20rpx 0;
+}
+
+.order-image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 12rpx;
+  background-color: #F5F5F5;
+  flex-shrink: 0;
+}
+
+.order-info {
+  flex: 1;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.order-title {
+  font-size: 30rpx;
+  color: #333333;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.order-desc {
+  font-size: 26rpx;
+  color: #999999;
+  margin-top: 8rpx;
+}
+
+.order-price {
+  margin-top: auto;
+}
+
+/* 订单底部 */
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #F0F0F0;
+}
+
+.order-time {
+  font-size: 24rpx;
+  color: #CCCCCC;
+}
+
+.order-actions {
+  display: flex;
+  gap: 16rpx;
+}
+
+.action-btn {
+  font-size: 26rpx;
+  padding: 12rpx 28rpx;
+  border-radius: 32rpx;
+  border: 1rpx solid #CCCCCC;
+  color: #666666;
+}
+
+.action-primary {
+  background-color: #1B2A4A;
+  border-color: #1B2A4A;
+  color: #FFFFFF;
+}
+
+.action-danger {
+  border-color: #F5222D;
+  color: #F5222D;
+}

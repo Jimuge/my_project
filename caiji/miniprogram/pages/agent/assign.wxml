@@ -1,0 +1,68 @@
+<!-- 订单分派 -->
+<view class="page">
+  <!-- 标签切换 -->
+  <view class="tabs">
+    <view class="tab {{activeTab === 'pending' ? 'active' : ''}}" bindtap="onTabChange" data-tab="pending">待分配 ({{pendingCount}})</view>
+    <view class="tab {{activeTab === 'assigned' ? 'active' : ''}}" bindtap="onTabChange" data-tab="assigned">已分派</view>
+  </view>
+
+  <!-- 待分配列表 -->
+  <view class="order-list" wx:if="{{activeTab === 'pending'}}">
+    <view class="order-card" wx:for="{{pendingOrders}}" wx:key="_id">
+      <view class="order-top">
+        <text class="order-no">{{item.orderNo}}</text>
+        <status-badge status="{{item.status}}" />
+      </view>
+      <view class="order-info">
+        <text class="order-customer">客户：{{item.customerName}}</text>
+        <text class="order-time">预约：{{item.appointmentTime}}</text>
+        <text class="order-style">款式：{{item.styleName}}</text>
+      </view>
+      <view class="order-actions">
+        <view class="action-btn self" bindtap="onSelfMeasure" data-id="{{item._id}}">我自己量</view>
+        <view class="action-btn assign" bindtap="onShowTailors" data-id="{{item._id}}">分派量体师</view>
+      </view>
+    </view>
+    <empty-state wx:if="{{pendingOrders.length === 0}}" message="暂无待分配订单" />
+  </view>
+
+  <!-- 已分派列表 -->
+  <view class="order-list" wx:if="{{activeTab === 'assigned'}}">
+    <view class="order-card" wx:for="{{assignedOrders}}" wx:key="_id">
+      <view class="order-top">
+        <text class="order-no">{{item.orderNo}}</text>
+        <status-badge status="{{item.status}}" />
+      </view>
+      <view class="order-info">
+        <text class="order-customer">客户：{{item.customerName}}</text>
+        <text class="order-time">预约：{{item.appointmentTime}}</text>
+        <text class="order-tailor">量体师：{{item.tailorName}}</text>
+      </view>
+    </view>
+    <empty-state wx:if="{{assignedOrders.length === 0}}" message="暂无已分派订单" />
+  </view>
+
+  <!-- 量体师选择弹窗 -->
+  <view class="modal-mask" wx:if="{{showTailorModal}}" bindtap="closeTailorModal">
+    <view class="modal-content" catchtap="">
+      <view class="modal-title">选择量体师</view>
+      <view class="tailor-list">
+        <view class="tailor-item {{selectedTailor === item._id ? 'active' : ''}}" wx:for="{{tailors}}" wx:key="_id" bindtap="onSelectTailor" data-id="{{item._id}}">
+          <image class="tailor-avatar" src="{{item.avatar || '/images/avatar-default.png'}}" mode="aspectFill" />
+          <view class="tailor-info">
+            <text class="tailor-name">{{item.name}}</text>
+            <view class="tailor-meta">
+              <text class="tailor-rating">评分 {{item.rating}}</text>
+              <text class="tailor-orders">近7天 {{item.recentOrders}}单</text>
+            </view>
+          </view>
+          <view class="tailor-check" wx:if="{{selectedTailor === item._id}}">✓</view>
+        </view>
+      </view>
+      <view class="modal-btns">
+        <view class="modal-btn cancel" bindtap="closeTailorModal">取消</view>
+        <view class="modal-btn confirm" bindtap="onConfirmAssign">确认分派</view>
+      </view>
+    </view>
+  </view>
+</view>

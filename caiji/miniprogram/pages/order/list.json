@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "订单",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "order-card": "/components/order-card/index",
+    "loading": "/components/loading/index",
+    "empty-state": "/components/empty-state/index"
+  }
+}

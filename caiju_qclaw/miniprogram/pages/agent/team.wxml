@@ -1,0 +1,55 @@
+<!-- 团队管理 -->
+<view class="page">
+  <!-- 邀请码 -->
+  <view class="invite-card">
+    <view class="invite-title">邀请码</view>
+    <view class="invite-code">{{inviteCode}}</view>
+    <view class="invite-actions">
+      <view class="invite-btn" bindtap="onCopyCode">复制邀请码</view>
+      <view class="invite-btn" bindtap="onShowQrCode">查看二维码</view>
+    </view>
+  </view>
+
+  <!-- 团队业绩看板 -->
+  <view class="performance-card">
+    <view class="perf-title">团队业绩</view>
+    <view class="perf-row">
+      <view class="perf-item">
+        <text class="perf-value">{{teamOrders}}</text>
+        <text class="perf-label">本月订单</text>
+      </view>
+      <view class="perf-item">
+        <text class="perf-value">¥{{teamCommission}}</text>
+        <text class="perf-label">本月佣金</text>
+      </view>
+      <view class="perf-item">
+        <text class="perf-value">{{activeMembers}}</text>
+        <text class="perf-label">活跃成员</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 团队成员 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">团队成员 ({{members.length}})</text>
+    </view>
+    <view class="member-list">
+      <view class="member-item" wx:for="{{members}}" wx:key="_id" bindtap="onMemberDetail" data-id="{{item._id}}">
+        <image class="member-avatar" src="{{item.avatar || '/images/avatar-default.png'}}" mode="aspectFill" />
+        <view class="member-info">
+          <view class="member-top">
+            <text class="member-name">{{item.name}}</text>
+            <text class="member-status {{item.status === 'active' ? 'active' : ''}}">{{item.status === 'active' ? '活跃' : '休眠'}}</text>
+          </view>
+          <view class="member-meta">
+            <text class="member-join">加入：{{item.joinTime}}</text>
+            <text class="member-orders">本月 {{item.monthOrders}} 单</text>
+          </view>
+        </view>
+        <view class="member-more">›</view>
+      </view>
+    </view>
+    <empty-state wx:if="{{members.length === 0}}" message="暂无团队成员" />
+  </view>
+</view>

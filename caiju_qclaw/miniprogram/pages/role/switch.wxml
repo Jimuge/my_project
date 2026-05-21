@@ -1,0 +1,29 @@
+<!-- 身份切换页 -->
+<view class="role-switch-page">
+  <view class="page-title">选择身份</view>
+  
+  <view class="role-list">
+    <block wx:for="{{roles}}" wx:key="value">
+      <view 
+        class="role-item {{currentRole === item.value ? 'active' : ''}}"
+        data-role="{{item.value}}"
+        bindtap="onRoleChange"
+      >
+        <view class="role-icon">
+          <text>{{item.value === 'customer' ? '👤' : item.value === 'tailor' ? '📏' : '👔'}}</text>
+        </view>
+        <view class="role-info">
+          <view class="role-name">{{item.name}}</view>
+          <view class="role-desc">
+            {{item.value === 'customer' ? '享受定制服务' : item.value === 'tailor' ? '提供量体服务' : '推广获取佣金'}}
+          </view>
+        </view>
+        <view class="role-check" wx:if="{{currentRole === item.value}}">✓</view>
+      </view>
+    </block>
+  </view>
+
+  <view class="bottom-bar safe-area-bottom">
+    <button class="btn btn-primary btn-block" bindtap="onConfirm">确认切换</button>
+  </view>
+</view>

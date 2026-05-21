@@ -1,0 +1,70 @@
+/* 款式详情页样式 */
+.page-style-detail {
+  padding-bottom: 120rpx;
+}
+
+.style-image {
+  width: 100%;
+  height: 500rpx;
+  background-color: #F5F5F5;
+}
+
+.style-info {
+  margin: 24rpx;
+}
+
+.style-name {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 16rpx;
+}
+
+.style-desc {
+  font-size: 28rpx;
+  color: #999999;
+  margin-bottom: 24rpx;
+}
+
+.style-price {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.fabric-list {
+  margin: 0 24rpx 24rpx;
+}
+
+.fabric-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #F0F0F0;
+}
+
+.fabric-item:last-child {
+  border-bottom: none;
+}
+
+.fabric-name {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.fabric-price {
+  font-size: 26rpx;
+  color: #F5222D;
+}
+
+.bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFFFFF;
+  padding: 20rpx 24rpx;
+  box-shadow: 0 -2rpx 12rpx rgba(0, 0, 0, 0.06);
+}

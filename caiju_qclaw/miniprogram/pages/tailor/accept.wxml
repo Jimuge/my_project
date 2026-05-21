@@ -1,0 +1,68 @@
+<!-- 接单详情 -->
+<view class="page">
+  <!-- 客户信息 -->
+  <view class="customer-card">
+    <image class="avatar" src="{{order.customerAvatar || '/images/avatar-default.png'}}" mode="aspectFill" />
+    <view class="customer-info">
+      <text class="customer-name">{{order.customerName}}</text>
+      <text class="customer-tag" wx:if="{{order.isAssigned}}">客户指定</text>
+    </view>
+  </view>
+
+  <!-- 预约信息 -->
+  <view class="info-card">
+    <view class="info-row">
+      <text class="info-label">预约时间</text>
+      <text class="info-value highlight">{{order.appointmentTime}}</text>
+    </view>
+    <view class="info-row">
+      <text class="info-label">预约地址</text>
+      <text class="info-value">{{order.address}}</text>
+    </view>
+    <view class="info-row" wx:if="{{order.distance}}">
+      <text class="info-label">距离估算</text>
+      <text class="info-value distance">{{order.distance}}</text>
+    </view>
+  </view>
+
+  <!-- 款式布料 -->
+  <view class="info-card">
+    <view class="card-title">款式与布料</view>
+    <view class="fabric-row">
+      <image class="fabric-img" src="{{order.fabricImage || '/images/fabric-placeholder.png'}}" mode="aspectFill" />
+      <view class="fabric-info">
+        <text class="fabric-name">{{order.styleName}}</text>
+        <text class="fabric-detail">{{order.fabricName}}</text>
+        <text class="fabric-price">¥{{order.totalPrice}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 备注 -->
+  <view class="info-card" wx:if="{{order.remark}}">
+    <view class="card-title">客户备注</view>
+    <text class="remark-text">{{order.remark}}</text>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="action-bar">
+    <view class="btn btn-reject" bindtap="onReject">拒绝</view>
+    <view class="btn btn-accept" bindtap="onAccept">接受</view>
+  </view>
+
+  <!-- 拒绝原因弹窗 -->
+  <view class="modal-mask" wx:if="{{showRejectModal}}" bindtap="closeRejectModal">
+    <view class="modal-content" catchtap="">
+      <view class="modal-title">选择拒绝原因</view>
+      <view class="reason-list">
+        <view class="reason-item {{rejectReason === item ? 'active' : ''}}" wx:for="{{rejectReasons}}" wx:key="*this" bindtap="selectReason" data-reason="{{item}}">
+          {{item}}
+        </view>
+      </view>
+      <view class="modal-btns">
+        <view class="modal-btn cancel" bindtap="closeRejectModal">取消</view>
+        <view class="modal-btn confirm" bindtap="confirmReject">确认拒绝</view>
+      </view>
+    </view>
+  </view>
+</view>

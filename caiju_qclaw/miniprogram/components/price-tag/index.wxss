@@ -1,0 +1,41 @@
+/* 价格标签组件样式 */
+.price-tag {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.price-symbol {
+  font-size: 24rpx;
+  color: var(--error-color, #F5222D);
+  font-weight: 500;
+}
+
+.price-value {
+  font-size: 36rpx;
+  color: var(--error-color, #F5222D);
+  font-weight: 600;
+}
+
+/* 小尺寸 */
+.size-sm .price-symbol {
+  font-size: 20rpx;
+}
+
+.size-sm .price-value {
+  font-size: 28rpx;
+}
+
+/* 大尺寸 */
+.size-lg .price-symbol {
+  font-size: 28rpx;
+}
+
+.size-lg .price-value {
+  font-size: 44rpx;
+}
+
+/* 白色主题 */
+.theme-white .price-symbol,
+.theme-white .price-value {
+  color: #FFFFFF;
+}

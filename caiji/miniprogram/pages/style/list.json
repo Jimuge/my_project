@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "选款",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "style-card": "/components/style-card/index",
+    "loading": "/components/loading/index",
+    "empty-state": "/components/empty-state/index"
+  }
+}

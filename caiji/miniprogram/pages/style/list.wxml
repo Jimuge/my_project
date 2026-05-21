@@ -1,0 +1,19 @@
+<!-- 款式列表页 -->
+<view class="page-style-list">
+  <view class="style-grid">
+    <block wx:for="{{styles}}" wx:key="id">
+      <style-card 
+        class="style-item"
+        style="{{item}}"
+        bind:tap="onStyleTap"
+      ></style-card>
+    </block>
+  </view>
+  
+  <empty-state 
+    wx:if="{{!loading && styles.length === 0}}"
+    text="暂无款式"
+  ></empty-state>
+  
+  <loading loading="{{loading}}"></loading>
+</view>

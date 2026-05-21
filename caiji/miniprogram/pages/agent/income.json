@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "佣金结算",
+  "usingComponents": {
+    "empty-state": "/components/empty-state/index"
+  }
+}

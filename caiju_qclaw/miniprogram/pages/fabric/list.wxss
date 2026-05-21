@@ -1,0 +1,4 @@
+/* 布料列表页样式 */
+.fabric-name { font-size: 30rpx; font-weight: 500; }
+.fabric-origin { font-size: 26rpx; color: #999; margin-top: 8rpx; }
+.fabric-price { font-size: 28rpx; color: #F5222D; margin-top: 12rpx; }

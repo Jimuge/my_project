@@ -1,0 +1,120 @@
+/* 个人中心页样式 */
+.page-profile {
+  min-height: 100vh;
+  background-color: #F5F5F5;
+}
+
+/* 用户卡片 */
+.user-card {
+  background: linear-gradient(135deg, #1B2A4A 0%, #2A3F5F 100%);
+  padding: 48rpx 24rpx;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+
+.user-info {
+  flex: 1;
+  margin-left: 24rpx;
+}
+
+.nickname {
+  font-size: 34rpx;
+  font-weight: 600;
+}
+
+.roles {
+  margin-top: 8rpx;
+}
+
+.role-tag {
+  display: inline-block;
+  font-size: 22rpx;
+  padding: 4rpx 12rpx;
+  background-color: rgba(201, 169, 110, 0.3);
+  border-radius: 16rpx;
+  margin-right: 8rpx;
+}
+
+.switch-role {
+  font-size: 24rpx;
+  padding: 8rpx 20rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.5);
+  border-radius: 24rpx;
+}
+
+.login-prompt {
+  display: flex;
+  align-items: center;
+}
+
+.login-text {
+  margin-left: 24rpx;
+  font-size: 32rpx;
+}
+
+/* 菜单列表 */
+.menu-list {
+  background-color: #FFFFFF;
+  margin-top: 24rpx;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 32rpx 24rpx;
+  border-bottom: 1rpx solid #F0F0F0;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-icon {
+  font-size: 36rpx;
+  margin-right: 16rpx;
+}
+
+.menu-name {
+  flex: 1;
+  font-size: 30rpx;
+  color: #333333;
+}
+
+.menu-arrow {
+  font-size: 28rpx;
+  color: #CCCCCC;
+}
+
+/* 角色工作台入口 */
+.role-entry {
+  margin-top: 24rpx;
+  padding: 0 24rpx;
+}
+
+.role-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32rpx;
+  border-radius: 16rpx;
+  color: #FFFFFF;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.role-card.tailor {
+  background: linear-gradient(135deg, #1890FF 0%, #40A9FF 100%);
+  margin-bottom: 16rpx;
+}
+
+.role-card.agent {
+  background: linear-gradient(135deg, #C9A96E 0%, #D4B87A 100%);
+}

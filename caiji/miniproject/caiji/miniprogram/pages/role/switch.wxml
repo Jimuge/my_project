@@ -1,0 +1,43 @@
+<!-- pages/role/switch.wxml - 身份切换 -->
+<view class="container">
+
+  <!-- 当前角色显示 -->
+  <view class="current-role-section">
+    <text class="section-label">当前身份</text>
+    <view class="current-role-card">
+      <view class="current-icon">{{currentRole.icon}}</view>
+      <view class="current-info">
+        <text class="current-name">{{currentRole.name}}</text>
+        <text class="current-desc">{{currentRole.desc}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 角色切换列表 -->
+  <view class="role-section">
+    <text class="section-label">切换身份</text>
+    <view
+      class="role-card {{role.id === currentRole.id ? 'active' : ''}}"
+      wx:for="{{roles}}"
+      wx:key="id"
+      bindtap="onRoleSelect"
+      data-id="{{item.id}}"
+    >
+      <view class="role-icon">{{item.icon}}</view>
+      <view class="role-info">
+        <text class="role-name">{{item.name}}</text>
+        <text class="role-desc">{{item.desc}}</text>
+        <view class="role-features" wx:if="{{item.features}}">
+          <text class="feature-tag" wx:for="{{item.features}}" wx:key="index">{{item}}</text>
+        </view>
+      </view>
+      <view class="active-mark" wx:if="{{role.id === currentRole.id}}">当前</view>
+    </view>
+  </view>
+
+  <!-- 提示 -->
+  <view class="tip-section">
+    <text class="tip-text">切换身份后将跳转到对应工作台，不同身份享有不同的功能权限</text>
+  </view>
+
+</view>

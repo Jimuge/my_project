@@ -1,0 +1,239 @@
+/* 接单详情 */
+.page {
+  background-color: #F5F5F5;
+  min-height: 100vh;
+  padding-bottom: 140rpx;
+}
+
+.customer-card {
+  background: linear-gradient(135deg, #1B2A4A 0%, #2D4270 100%);
+  padding: 40rpx 32rpx;
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  border: 4rpx solid rgba(255,255,255,0.3);
+}
+
+.customer-info {
+  margin-left: 24rpx;
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.customer-name {
+  font-size: 34rpx;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.customer-tag {
+  font-size: 22rpx;
+  color: #C9A96E;
+  background: rgba(201,169,110,0.15);
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+.info-card {
+  background: #FFFFFF;
+  margin: 20rpx 32rpx;
+  border-radius: 16rpx;
+  padding: 28rpx 32rpx;
+  box-shadow: 0 4rpx 16rpx rgba(27,42,74,0.08);
+}
+
+.card-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1B2A4A;
+  margin-bottom: 20rpx;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid #F0F0F0;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.info-value {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.info-value.highlight {
+  color: #C9A96E;
+  font-weight: 600;
+}
+
+.info-value.distance {
+  color: #1B2A4A;
+}
+
+.fabric-row {
+  display: flex;
+  align-items: center;
+}
+
+.fabric-img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 12rpx;
+  background: #F0F0F0;
+}
+
+.fabric-info {
+  margin-left: 24rpx;
+  flex: 1;
+}
+
+.fabric-name {
+  font-size: 30rpx;
+  color: #333333;
+  font-weight: 500;
+  display: block;
+}
+
+.fabric-detail {
+  font-size: 26rpx;
+  color: #999999;
+  margin-top: 8rpx;
+  display: block;
+}
+
+.fabric-price {
+  font-size: 32rpx;
+  color: #C9A96E;
+  font-weight: 700;
+  margin-top: 8rpx;
+  display: block;
+}
+
+.remark-text {
+  font-size: 28rpx;
+  color: #666666;
+  line-height: 1.6;
+}
+
+/* 操作按钮 */
+.action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  padding: 20rpx 32rpx;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+  background: #FFFFFF;
+  box-shadow: 0 -4rpx 16rpx rgba(0,0,0,0.06);
+  gap: 24rpx;
+}
+
+.btn {
+  flex: 1;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 600;
+  border-radius: 16rpx;
+}
+
+.btn-reject {
+  background: #F5F5F5;
+  color: #999999;
+}
+
+.btn-accept {
+  background: #1B2A4A;
+  color: #FFFFFF;
+}
+
+/* 弹窗 */
+.modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  width: 600rpx;
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  padding: 40rpx;
+}
+
+.modal-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #1B2A4A;
+  text-align: center;
+  margin-bottom: 32rpx;
+}
+
+.reason-list {
+  margin-bottom: 32rpx;
+}
+
+.reason-item {
+  padding: 24rpx;
+  border: 2rpx solid #E0E0E0;
+  border-radius: 12rpx;
+  margin-bottom: 16rpx;
+  font-size: 28rpx;
+  color: #333333;
+  text-align: center;
+}
+
+.reason-item.active {
+  border-color: #C9A96E;
+  color: #C9A96E;
+  background: #FFF8F0;
+}
+
+.modal-btns {
+  display: flex;
+  gap: 24rpx;
+}
+
+.modal-btn {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 12rpx;
+  font-size: 30rpx;
+}
+
+.modal-btn.cancel {
+  background: #F5F5F5;
+  color: #999999;
+}
+
+.modal-btn.confirm {
+  background: #1B2A4A;
+  color: #FFFFFF;
+}

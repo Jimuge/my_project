@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "style-card": "/components/style-card/index",
+    "loading": "/components/loading/index"
+  }
+}

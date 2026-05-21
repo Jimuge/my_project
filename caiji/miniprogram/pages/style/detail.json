@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "款式详情",
+  "usingComponents": {
+    "price-tag": "/components/price-tag/index",
+    "loading": "/components/loading/index"
+  }
+}

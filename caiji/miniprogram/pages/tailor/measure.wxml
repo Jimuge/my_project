@@ -1,0 +1,63 @@
+<!-- 量体数据录入 -->
+<view class="page">
+  <!-- 19项量体数据 -->
+  <view class="section-card">
+    <view class="card-title">量体数据 <text class="card-subtitle">（单位：cm）</text></view>
+    <view class="measure-grid">
+      <view class="measure-item" wx:for="{{measureItems}}" wx:key="field">
+        <text class="measure-label">{{item.label}}</text>
+        <view class="measure-input-wrap">
+          <input class="measure-input" type="digit" placeholder="{{item.placeholder}}" value="{{measureData[item.field]}}" data-field="{{item.field}}" bindinput="onMeasureInput" />
+          <text class="measure-unit">{{item.unit}}</text>
+        </view>
+        <text class="measure-warn" wx:if="{{warnings[item.field]}}">{{warnings[item.field]}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 合身偏好 -->
+  <view class="section-card">
+    <view class="card-title">合身偏好</view>
+    <view class="preference-row">
+      <view class="pref-item {{fitPreference === 'slim' ? 'active' : ''}}" bindtap="onFitPref" data-value="slim">修身</view>
+      <view class="pref-item {{fitPreference === 'regular' ? 'active' : ''}}" bindtap="onFitPref" data-value="regular">合身</view>
+      <view class="pref-item {{fitPreference === 'loose' ? 'active' : ''}}" bindtap="onFitPref" data-value="loose">宽松</view>
+    </view>
+  </view>
+
+  <!-- 使用场景 -->
+  <view class="section-card">
+    <view class="card-title">使用场景</view>
+    <view class="preference-row">
+      <view class="scene-item {{sceneSelected[item] ? 'active' : ''}}" wx:for="{{scenes}}" wx:key="*this" bindtap="onSceneToggle" data-scene="{{item}}">{{item}}</view>
+    </view>
+  </view>
+
+  <!-- 特殊需求 -->
+  <view class="section-card">
+    <view class="card-title">特殊需求</view>
+    <textarea class="special-input" placeholder="请输入客户的特殊需求..." value="{{specialNote}}" bindinput="onSpecialInput" maxlength="200" />
+  </view>
+
+  <!-- 拍照上传 -->
+  <view class="section-card">
+    <view class="card-title">客户体型照片</view>
+    <view class="photo-row">
+      <view class="photo-item" wx:for="{{photoItems}}" wx:key="field">
+        <view class="photo-upload" bindtap="onTakePhoto" data-field="{{item.field}}">
+          <image class="photo-preview" wx:if="{{photos[item.field]}}" src="{{photos[item.field]}}" mode="aspectFill" />
+          <view class="photo-placeholder" wx:else>
+            <text class="photo-plus">+</text>
+            <text class="photo-label">{{item.label}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="action-bar">
+    <view class="btn btn-draft" bindtap="onSaveDraft">保存草稿</view>
+    <view class="btn btn-submit" bindtap="onSubmit">提交方案</view>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+<!-- 状态徽标组件 - 显示订单/商品状态 -->
+<view class="status-badge status-{{type}}">
+  <text>{{text}}</text>
+</view>

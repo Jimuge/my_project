@@ -1,0 +1,13 @@
+<!-- 布料详情页 -->
+<view class="page" wx:if="{{fabric}}">
+  <view class="card">
+    <view class="fabric-name">{{fabric.name}}</view>
+    <view class="fabric-info">
+      <view>产地：{{fabric.origin}}</view>
+      <view>成分：{{fabric.composition}}</view>
+      <view>价格：¥{{fabric.pricePerMeter / 100}}/米</view>
+    </view>
+    <view class="fabric-desc">{{fabric.description}}</view>
+  </view>
+</view>
+<loading loading="{{loading}}"></loading>

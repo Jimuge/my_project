@@ -1,0 +1,76 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/style/list",
+    "pages/style/detail",
+    "pages/fabric/list",
+    "pages/fabric/detail",
+    "pages/order/create",
+    "pages/order/list",
+    "pages/order/detail",
+    "pages/order/pay",
+    "pages/profile/index",
+    "pages/tailor/index",
+    "pages/tailor/accept",
+    "pages/tailor/measure",
+    "pages/tailor/sign",
+    "pages/tailor/income",
+    "pages/agent/index",
+    "pages/agent/assign",
+    "pages/agent/promo",
+    "pages/agent/team",
+    "pages/agent/income",
+    "pages/auth/index",
+    "pages/role/switch"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1B2A4A",
+    "navigationBarTitleText": "裁局",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F5F5F5"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#1B2A4A",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabbar/home.png",
+        "selectedIconPath": "images/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/style/list",
+        "text": "选款",
+        "iconPath": "images/tabbar/style.png",
+        "selectedIconPath": "images/tabbar/style-active.png"
+      },
+      {
+        "pagePath": "pages/order/list",
+        "text": "订单",
+        "iconPath": "images/tabbar/order.png",
+        "selectedIconPath": "images/tabbar/order-active.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "images/tabbar/profile.png",
+        "selectedIconPath": "images/tabbar/profile-active.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "price-tag": "/components/price-tag/index",
+    "order-card": "/components/order-card/index",
+    "style-card": "/components/style-card/index",
+    "status-badge": "/components/status-badge/index",
+    "empty-state": "/components/empty-state/index",
+    "loading": "/components/loading/index"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents"
+}

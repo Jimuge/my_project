@@ -1,0 +1,16 @@
+<!-- 款式卡片组件 - 显示款式概要信息 -->
+<view class="style-card" bindtap="handleTap">
+  <view class="style-image-wrapper">
+    <image class="style-image" src="{{style.imageUrl}}" mode="aspectFill"></image>
+    <view class="style-tag" wx:if="{{style.tag}}">{{style.tag}}</view>
+  </view>
+  
+  <view class="style-content">
+    <view class="style-name">{{style.name}}</view>
+    <view class="style-desc">{{style.description}}</view>
+    <view class="style-footer">
+      <price-tag price="{{style.minPrice}}"></price-tag>
+      <text class="style-sales">已售 {{style.salesCount || 0}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,164 @@
+/* 团队管理 */
+.page {
+  background-color: #F5F5F5;
+  min-height: 100vh;
+}
+
+.invite-card {
+  background: linear-gradient(135deg, #1B2A4A 0%, #2D4270 100%);
+  margin: 20rpx 32rpx;
+  border-radius: 16rpx;
+  padding: 40rpx 32rpx;
+  text-align: center;
+}
+
+.invite-title {
+  font-size: 26rpx;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 16rpx;
+}
+
+.invite-code {
+  font-size: 56rpx;
+  font-weight: 700;
+  color: #C9A96E;
+  letter-spacing: 12rpx;
+  margin-bottom: 28rpx;
+}
+
+.invite-actions {
+  display: flex;
+  gap: 24rpx;
+  justify-content: center;
+}
+
+.invite-btn {
+  background: rgba(255,255,255,0.15);
+  color: #FFFFFF;
+  font-size: 26rpx;
+  padding: 12rpx 32rpx;
+  border-radius: 8rpx;
+}
+
+.performance-card {
+  background: #FFFFFF;
+  margin: 20rpx 32rpx;
+  border-radius: 16rpx;
+  padding: 28rpx 32rpx;
+  box-shadow: 0 4rpx 16rpx rgba(27,42,74,0.08);
+}
+
+.perf-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1B2A4A;
+  margin-bottom: 20rpx;
+}
+
+.perf-row {
+  display: flex;
+}
+
+.perf-item {
+  flex: 1;
+  text-align: center;
+}
+
+.perf-value {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #1B2A4A;
+  display: block;
+}
+
+.perf-label {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 4rpx;
+  display: block;
+}
+
+.section {
+  margin: 20rpx 32rpx;
+}
+
+.section-header {
+  margin-bottom: 16rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1B2A4A;
+}
+
+.member-list {
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 16rpx rgba(27,42,74,0.08);
+}
+
+.member-item {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 32rpx;
+  border-bottom: 1rpx solid #F5F5F5;
+}
+
+.member-item:last-child {
+  border-bottom: none;
+}
+
+.member-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: #F0F0F0;
+}
+
+.member-info {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.member-top {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  margin-bottom: 4rpx;
+}
+
+.member-name {
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 500;
+}
+
+.member-status {
+  font-size: 22rpx;
+  color: #999999;
+  background: #F5F5F5;
+  padding: 2rpx 12rpx;
+  border-radius: 8rpx;
+}
+
+.member-status.active {
+  color: #52C41A;
+  background: #F0FFF4;
+}
+
+.member-meta {
+  display: flex;
+  gap: 20rpx;
+}
+
+.member-join, .member-orders {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.member-more {
+  font-size: 36rpx;
+  color: #CCCCCC;
+}

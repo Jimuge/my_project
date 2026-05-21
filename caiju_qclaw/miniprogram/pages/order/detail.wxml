@@ -1,0 +1,42 @@
+<!-- 订单详情页 -->
+<view class="page" wx:if="{{order}}">
+  <!-- 状态栏 -->
+  <view class="status-bar">
+    <view class="status-text">{{order.statusText}}</view>
+  </view>
+
+  <!-- 订单信息 -->
+  <view class="card">
+    <view class="card-title">订单信息</view>
+    <view class="info-row">
+      <text class="label">订单编号</text>
+      <text class="value">{{order.orderNo}}</text>
+    </view>
+    <view class="info-row">
+      <text class="label">款式</text>
+      <text class="value">{{order.styleName}}</text>
+    </view>
+    <view class="info-row">
+      <text class="label">布料</text>
+      <text class="value">{{order.fabricName}}</text>
+    </view>
+    <view class="info-row">
+      <text class="label">下单时间</text>
+      <text class="value">{{order.createTime}}</text>
+    </view>
+  </view>
+
+  <!-- 订单金额 -->
+  <view class="card">
+    <view class="info-row">
+      <text class="label">订单金额</text>
+      <text class="value price">¥{{order.totalPrice / 100}}</text>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="bottom-bar safe-area-bottom" wx:if="{{order.status === 10}}">
+    <button class="btn btn-primary btn-block" bindtap="onPay">去支付</button>
+  </view>
+</view>
+<loading loading="{{loading}}"></loading>

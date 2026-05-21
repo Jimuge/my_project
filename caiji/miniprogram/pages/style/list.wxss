@@ -1,0 +1,16 @@
+/* 款式列表页样式 */
+.page-style-list {
+  min-height: 100vh;
+  background-color: #F5F5F5;
+  padding: 24rpx;
+}
+
+.style-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24rpx;
+}
+
+.style-item {
+  width: calc(50% - 12rpx);
+}

@@ -1,0 +1,1 @@
+{"envId": "cloudbase-d7g1pmyqy316370b1", "functionRoot": "./cloudfunctions", "functions": [{"name": "api", "timeout": 20, "runtime": "Nodejs18.9", "installDependency": true, "handler": "index.main", "envVariables": {}}]}

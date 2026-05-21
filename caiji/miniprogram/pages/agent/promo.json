@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "推广码",
+  "usingComponents": {
+    "empty-state": "/components/empty-state/index"
+  }
+}

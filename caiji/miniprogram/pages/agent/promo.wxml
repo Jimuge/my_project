@@ -1,0 +1,50 @@
+<!-- 推广码 -->
+<view class="page">
+  <!-- 小程序码 -->
+  <view class="qrcode-card">
+    <view class="qrcode-title">我的推广码</view>
+    <image class="qrcode-img" src="/images/qrcode-placeholder.png" mode="aspectFit" />
+    <view class="qrcode-actions">
+      <view class="qr-btn" bindtap="onSaveImage">保存到相册</view>
+      <view class="qr-btn share-btn">
+        <button class="share-button" open-type="share">分享给好友</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 扫码统计 -->
+  <view class="stats-card">
+    <view class="stats-row">
+      <view class="stats-item">
+        <text class="stats-value">{{totalScans}}</text>
+        <text class="stats-label">累计扫码</text>
+      </view>
+      <view class="stats-item">
+        <text class="stats-value">{{totalOrders}}</text>
+        <text class="stats-label">扫码下单</text>
+      </view>
+      <view class="stats-item">
+        <text class="stats-value">{{conversionRate}}%</text>
+        <text class="stats-label">转化率</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 历史推广码 -->
+  <view class="section">
+    <view class="section-title">历史推广码</view>
+    <view class="promo-list">
+      <view class="promo-item" wx:for="{{promoList}}" wx:key="_id">
+        <view class="promo-left">
+          <text class="promo-channel">{{item.channel}}</text>
+          <text class="promo-date">{{item.createTime}}</text>
+        </view>
+        <view class="promo-right">
+          <text class="promo-scans">扫码 {{item.scanCount}}</text>
+          <text class="promo-orders">下单 {{item.orderCount}}</text>
+        </view>
+      </view>
+    </view>
+    <empty-state wx:if="{{promoList.length === 0}}" message="暂无推广记录" />
+  </view>
+</view>

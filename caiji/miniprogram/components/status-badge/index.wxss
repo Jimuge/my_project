@@ -1,0 +1,51 @@
+/* 状态徽标组件样式 */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rpx 20rpx;
+  border-radius: 24rpx;
+  font-size: 24rpx;
+}
+
+/* 默认状态 */
+.status-default {
+  background-color: rgba(153, 153, 153, 0.1);
+  color: #999999;
+}
+
+/* 成功状态 */
+.status-success {
+  background-color: rgba(82, 196, 26, 0.1);
+  color: #52C41A;
+}
+
+/* 警告状态 */
+.status-warning {
+  background-color: rgba(250, 173, 20, 0.1);
+  color: #FAAD14;
+}
+
+/* 错误状态 */
+.status-error {
+  background-color: rgba(245, 34, 45, 0.1);
+  color: #F5222D;
+}
+
+/* 信息状态 */
+.status-info {
+  background-color: rgba(24, 144, 255, 0.1);
+  color: #1890FF;
+}
+
+/* 主色状态 */
+.status-primary {
+  background-color: rgba(27, 42, 74, 0.1);
+  color: #1B2A4A;
+}
+
+/* 金色状态 */
+.status-accent {
+  background-color: rgba(201, 169, 110, 0.15);
+  color: #C9A96E;
+}

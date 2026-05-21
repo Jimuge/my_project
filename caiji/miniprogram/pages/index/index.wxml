@@ -1,0 +1,52 @@
+<!-- 首页 - 展示热门款式和快速入口 -->
+<view class="page-index">
+  <!-- 轮播图 -->
+  <swiper 
+    class="banner-swiper" 
+    indicator-dots 
+    autoplay 
+    circular
+    indicator-color="rgba(255,255,255,0.5)"
+    indicator-active-color="#FFFFFF"
+  >
+    <swiper-item wx:for="{{banners}}" wx:key="id" bindtap="onBannerTap" data-url="{{item.url}}">
+      <image class="banner-image" src="{{item.image}}" mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 快速分类入口 -->
+  <view class="category-section">
+    <view class="category-grid">
+      <view 
+        class="category-item" 
+        wx:for="{{categories}}" 
+        wx:key="id"
+        bindtap="onCategoryTap"
+        data-id="{{item.id}}"
+      >
+        <view class="category-icon">{{item.icon}}</view>
+        <text class="category-name">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 热门款式 -->
+  <view class="hot-section">
+    <view class="section-header">
+      <text class="section-title">热门款式</text>
+      <text class="section-more" bindtap="onViewMore">查看更多 ></text>
+    </view>
+    
+    <view class="style-list">
+      <block wx:for="{{hotStyles}}" wx:key="id">
+        <style-card 
+          style="{{item}}" 
+          bind:tap="onStyleTap"
+        ></style-card>
+      </block>
+    </view>
+  </view>
+
+  <!-- 加载状态 -->
+  <loading loading="{{loading}}"></loading>
+</view>

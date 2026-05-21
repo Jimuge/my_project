@@ -1,0 +1,16 @@
+<!-- 空状态组件 - 显示无数据时的占位图 -->
+<view class="empty-state">
+  <image 
+    class="empty-image" 
+    src="{{imageSrc}}" 
+    mode="aspectFit"
+    wx:if="{{imageSrc}}"
+  ></image>
+  <view class="empty-icon" wx:else>
+    <text class="iconfont">{{icon}}</text>
+  </view>
+  <view class="empty-text">{{text}}</view>
+  <view class="empty-action" wx:if="{{actionText}}" bindtap="handleAction">
+    {{actionText}}
+  </view>
+</view>

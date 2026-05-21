@@ -1,0 +1,1 @@
+{ "navigationBarTitleText": "布料选择", "usingComponents": { "loading": "/components/loading/index", "empty-state": "/components/empty-state/index" } }

@@ -1,0 +1,49 @@
+<!-- 个人中心页 -->
+<view class="page-profile">
+  <!-- 用户信息卡片 -->
+  <view class="user-card">
+    <block wx:if="{{hasLogin}}">
+      <image class="avatar" src="{{userInfo.avatar || '/images/default-avatar.png'}}"></image>
+      <view class="user-info">
+        <view class="nickname">{{userInfo.nickname || '未设置昵称'}}</view>
+        <view class="roles">
+          <block wx:for="{{roles}}" wx:key="*this">
+            <text class="role-tag">{{item === 'customer' ? '客户' : item === 'tailor' ? '量体师' : '代理'}}</text>
+          </block>
+        </view>
+      </view>
+      <view class="switch-role" bindtap="onSwitchRole" wx:if="{{roles.length > 1}}">切换身份</view>
+    </block>
+    <block wx:else>
+      <view class="login-prompt" bindtap="onLogin">
+        <image class="avatar" src="/images/default-avatar.png"></image>
+        <view class="login-text">点击登录</view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 菜单列表 -->
+  <view class="menu-list">
+    <block wx:for="{{menuItems}}" wx:key="id">
+      <view class="menu-item" bindtap="onMenuTap" data-url="{{item.url}}">
+        <view class="menu-icon">{{item.icon}}</view>
+        <view class="menu-name">{{item.name}}</view>
+        <view class="menu-arrow">></view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 角色工作台入口 -->
+  <view class="role-entry" wx:if="{{hasLogin}}">
+    <block wx:if="{{roles.includes('tailor')}}">
+      <navigator class="role-card tailor" url="/pages/tailor/index">
+        <text>量体师工作台</text>
+      </navigator>
+    </block>
+    <block wx:if="{{roles.includes('agent')}}">
+      <navigator class="role-card agent" url="/pages/agent/index">
+        <text>代理工作台</text>
+      </navigator>
+    </block>
+  </view>
+</view>

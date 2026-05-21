@@ -1,0 +1,50 @@
+<!-- 收入中心 -->
+<view class="page">
+  <!-- 收入概览 -->
+  <view class="income-header">
+    <view class="income-card">
+      <view class="income-label">本月收入</view>
+      <view class="income-amount">¥{{monthTotal}}</view>
+      <view class="income-sub">完成 {{monthCompleted}} 单</view>
+    </view>
+    <view class="withdraw-btn" bindtap="onWithdraw">提现</view>
+  </view>
+
+  <!-- 收入明细 -->
+  <view class="section">
+    <view class="section-title">收入明细</view>
+    <view class="detail-list">
+      <view class="detail-item" wx:for="{{incomeList}}" wx:key="_id">
+        <view class="detail-left">
+          <text class="detail-desc">{{item.desc}}</text>
+          <text class="detail-time">{{item.time}}</text>
+        </view>
+        <text class="detail-amount">+¥{{item.amount}}</text>
+      </view>
+    </view>
+    <empty-state wx:if="{{incomeList.length === 0}}" message="暂无收入记录" />
+  </view>
+
+  <!-- 结算规则 -->
+  <view class="section">
+    <view class="section-title">结算规则</view>
+    <view class="rules-card">
+      <view class="rule-item">
+        <text class="rule-dot">•</text>
+        <text>量体服务费按订单金额的 15% 结算</text>
+      </view>
+      <view class="rule-item">
+        <text class="rule-dot">•</text>
+        <text>订单完成且客户确认后 7 个工作日到账</text>
+      </view>
+      <view class="rule-item">
+        <text class="rule-dot">•</text>
+        <text>提现最低金额 100 元，1-3 个工作日到账</text>
+      </view>
+      <view class="rule-item">
+        <text class="rule-dot">•</text>
+        <text>售后退款订单将扣除对应收入</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,50 @@
+<!-- 签名确认 -->
+<view class="page">
+  <!-- 量体数据汇总 -->
+  <view class="section-card">
+    <view class="card-title">量体数据汇总</view>
+    <view class="summary-grid">
+      <view class="summary-item" wx:for="{{summaryList}}" wx:key="label">
+        <text class="summary-label">{{item.label}}</text>
+        <text class="summary-value">{{item.value}}{{item.unit}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 款式布料信息 -->
+  <view class="section-card">
+    <view class="card-title">款式与布料</view>
+    <view class="fabric-row">
+      <view class="fabric-item">
+        <text class="fabric-label">款式</text>
+        <text class="fabric-value">{{orderInfo.styleName}}</text>
+      </view>
+      <view class="fabric-item">
+        <text class="fabric-label">布料</text>
+        <text class="fabric-value">{{orderInfo.fabricName}}</text>
+      </view>
+      <view class="fabric-item">
+        <text class="fabric-label">合身偏好</text>
+        <text class="fabric-value">{{orderInfo.fitPreference}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 签名区域 -->
+  <view class="section-card">
+    <view class="card-title">客户签名确认</view>
+    <view class="canvas-wrap">
+      <canvas class="sign-canvas" canvas-id="signCanvas" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd" disable-scroll="true" />
+    </view>
+    <view class="sign-tips" wx:if="{{!hasSigned}}">请在上方区域手写签名</view>
+    <view class="sign-btns">
+      <view class="btn-clear" bindtap="onClearSign">清除签名</view>
+    </view>
+  </view>
+
+  <!-- 提交按钮 -->
+  <view class="action-bar">
+    <view class="btn btn-back" bindtap="onGoBack">返回修改</view>
+    <view class="btn btn-submit {{!hasSigned ? 'disabled' : ''}}" bindtap="onSubmitSign">提交方案</view>
+  </view>
+</view>

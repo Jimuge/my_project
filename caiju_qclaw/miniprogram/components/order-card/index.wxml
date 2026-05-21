@@ -1,0 +1,31 @@
+<!-- 订单卡片组件 - 显示订单概要信息 -->
+<view class="order-card" bindtap="handleTap">
+  <view class="order-header">
+    <text class="order-no">订单号：{{order.orderNo}}</text>
+    <view class="order-status status-{{order.statusClass}}">
+      {{order.statusText}}
+    </view>
+  </view>
+  
+  <view class="order-body">
+    <image class="order-image" src="{{order.imageUrl}}" mode="aspectFill"></image>
+    <view class="order-info">
+      <view class="order-title">{{order.styleName}}</view>
+      <view class="order-desc">{{order.fabricName}} | {{order.sizeText}}</view>
+      <view class="order-price">
+        <price-tag price="{{order.totalPrice}}"></price-tag>
+      </view>
+    </view>
+  </view>
+  
+  <view class="order-footer">
+    <text class="order-time">{{order.createTimeText}}</text>
+    <view class="order-actions" wx:if="{{order.actions.length > 0}}" catchtap="stopPropagation">
+      <block wx:for="{{order.actions}}" wx:key="index">
+        <view class="action-btn action-{{item.type}}" data-action="{{item.action}}" bindtap="handleAction">
+          {{item.text}}
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

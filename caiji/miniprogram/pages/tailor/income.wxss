@@ -1,0 +1,115 @@
+/* 收入中心 */
+.page {
+  background-color: #F5F5F5;
+  min-height: 100vh;
+}
+
+.income-header {
+  background: linear-gradient(135deg, #1B2A4A 0%, #2D4270 100%);
+  padding: 48rpx 32rpx 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.income-card {
+  flex: 1;
+}
+
+.income-label {
+  font-size: 26rpx;
+  color: rgba(255,255,255,0.7);
+}
+
+.income-amount {
+  font-size: 64rpx;
+  font-weight: 700;
+  color: #C9A96E;
+  margin: 12rpx 0 8rpx;
+}
+
+.income-sub {
+  font-size: 24rpx;
+  color: rgba(255,255,255,0.6);
+}
+
+.withdraw-btn {
+  background: #C9A96E;
+  color: #FFFFFF;
+  font-size: 28rpx;
+  font-weight: 600;
+  padding: 16rpx 40rpx;
+  border-radius: 40rpx;
+}
+
+.section {
+  margin: 20rpx 32rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1B2A4A;
+  margin-bottom: 20rpx;
+}
+
+.detail-list {
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 16rpx rgba(27,42,74,0.08);
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28rpx 32rpx;
+  border-bottom: 1rpx solid #F5F5F5;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-left {
+  flex: 1;
+}
+
+.detail-desc {
+  font-size: 28rpx;
+  color: #333333;
+  display: block;
+}
+
+.detail-time {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 8rpx;
+  display: block;
+}
+
+.detail-amount {
+  font-size: 32rpx;
+  color: #C9A96E;
+  font-weight: 600;
+}
+
+.rules-card {
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  padding: 28rpx 32rpx;
+  box-shadow: 0 4rpx 16rpx rgba(27,42,74,0.08);
+}
+
+.rule-item {
+  display: flex;
+  font-size: 26rpx;
+  color: #666666;
+  line-height: 1.8;
+}
+
+.rule-dot {
+  color: #C9A96E;
+  margin-right: 12rpx;
+}

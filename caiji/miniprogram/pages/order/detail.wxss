@@ -1,0 +1,7 @@
+/* 订单详情页样式 */
+.status-bar { background: linear-gradient(135deg, #1B2A4A 0%, #2A3F5F 100%); padding: 40rpx 24rpx; color: #FFF; }
+.status-text { font-size: 36rpx; font-weight: 600; }
+.info-row { display: flex; justify-content: space-between; padding: 16rpx 0; font-size: 28rpx; }
+.label { color: #999; }
+.value { color: #333; }
+.price { color: #F5222D; font-weight: 600; }

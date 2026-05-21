@@ -1,0 +1,33 @@
+<!-- 款式详情页 -->
+<view class="page-style-detail" wx:if="{{style}}">
+  <!-- 图片展示 -->
+  <image class="style-image" src="{{style.imageUrl}}" mode="aspectFill"></image>
+  
+  <!-- 基本信息 -->
+  <view class="style-info card">
+    <view class="style-name">{{style.name}}</view>
+    <view class="style-desc">{{style.description}}</view>
+    <view class="style-price">
+      <text>起售价：</text>
+      <price-tag price="{{style.minPrice}}"></price-tag>
+    </view>
+  </view>
+  
+  <!-- 可选布料 -->
+  <view class="fabric-list card">
+    <view class="card-title">可选布料</view>
+    <block wx:for="{{style.fabrics}}" wx:key="id">
+      <view class="fabric-item">
+        <text class="fabric-name">{{item.name}}</text>
+        <text class="fabric-price" wx:if="{{item.priceAdd > 0}}">+¥{{item.priceAdd / 100}}</text>
+      </view>
+    </block>
+  </view>
+  
+  <!-- 底部操作栏 -->
+  <view class="bottom-bar safe-area-bottom">
+    <button class="btn btn-primary btn-block" bindtap="onCreateOrder">立即定制</button>
+  </view>
+</view>
+
+<loading loading="{{loading}}"></loading>

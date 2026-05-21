@@ -1,0 +1,5 @@
+<!-- 价格标签组件 - 显示 ¥XX 格式 -->
+<view class="price-tag">
+  <text class="price-symbol">¥</text>
+  <text class="price-value">{{displayPrice}}</text>
+</view>

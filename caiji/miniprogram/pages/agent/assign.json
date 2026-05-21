@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "订单分派",
+  "usingComponents": {
+    "status-badge": "/components/status-badge/index",
+    "empty-state": "/components/empty-state/index"
+  }
+}

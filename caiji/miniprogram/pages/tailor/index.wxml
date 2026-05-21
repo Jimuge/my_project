@@ -1,0 +1,75 @@
+<!-- 量体师工作台 -->
+<view class="page">
+  <!-- 顶部状态栏 -->
+  <view class="header">
+    <view class="greeting">你好，{{tailorName}}</view>
+    <view class="header-right">
+      <switch class="accept-switch" checked="{{acceptAssigned}}" color="#C9A96E" bindchange="onSwitchAccept" />
+      <text class="switch-label">接受客户指定</text>
+    </view>
+  </view>
+
+  <!-- 今日待服务 - 大数字卡片 -->
+  <view class="stat-card main-stat">
+    <view class="stat-label">今日待服务</view>
+    <view class="stat-number">{{todayPending}}</view>
+    <view class="stat-unit">单</view>
+  </view>
+
+  <!-- 待接单提醒 -->
+  <view class="new-order-tip" wx:if="{{newOrderCount > 0}}" bindtap="goToAcceptList">
+    <image class="tip-icon" src="/images/icon-bell.png" mode="aspectFit" />
+    <text>有 {{newOrderCount}} 个新订单等待接单</text>
+    <view class="tip-arrow">›</view>
+  </view>
+
+  <!-- 数据概览 -->
+  <view class="overview-row">
+    <view class="overview-item">
+      <view class="overview-value">{{monthIncome}}</view>
+      <view class="overview-label">本月收入(元)</view>
+    </view>
+    <view class="overview-item">
+      <view class="overview-value">{{monthCompleted}}</view>
+      <view class="overview-label">本月完成</view>
+    </view>
+    <view class="overview-item">
+      <view class="overview-value">{{weekPending}}</view>
+      <view class="overview-label">本周待服务</view>
+    </view>
+  </view>
+
+  <!-- 近期订单 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">近期订单</text>
+      <text class="section-more" bindtap="goToOrderList">查看全部 ›</text>
+    </view>
+    <view wx:if="{{orders.length === 0}}">
+      <empty-state message="暂无订单" />
+    </view>
+    <view wx:for="{{orders}}" wx:key="_id" class="order-item" bindtap="goToOrderDetail" data-id="{{item._id}}">
+      <order-card order="{{item}}" />
+    </view>
+  </view>
+
+  <!-- 底部快捷入口 -->
+  <view class="quick-entry">
+    <view class="entry-item" bindtap="goToAcceptList">
+      <image class="entry-icon" src="/images/icon-accept.png" mode="aspectFit" />
+      <text>待接单</text>
+    </view>
+    <view class="entry-item" bindtap="goToMeasure">
+      <image class="entry-icon" src="/images/icon-measure.png" mode="aspectFit" />
+      <text>量体录入</text>
+    </view>
+    <view class="entry-item" bindtap="goToIncome">
+      <image class="entry-icon" src="/images/icon-income.png" mode="aspectFit" />
+      <text>收入中心</text>
+    </view>
+    <view class="entry-item" bindtap="goToHistory">
+      <image class="entry-icon" src="/images/icon-history.png" mode="aspectFit" />
+      <text>历史记录</text>
+    </view>
+  </view>
+</view>

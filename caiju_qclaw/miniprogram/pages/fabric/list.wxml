@@ -1,0 +1,12 @@
+<!-- 布料列表页 -->
+<view class="page">
+  <block wx:for="{{fabrics}}" wx:key="id">
+    <view class="card" bindtap="onFabricTap" data-id="{{item.id}}">
+      <view class="fabric-name">{{item.name}}</view>
+      <view class="fabric-origin">产地：{{item.origin}}</view>
+      <view class="fabric-price">¥{{item.pricePerMeter / 100}}/米</view>
+    </view>
+  </block>
+  <empty-state wx:if="{{!loading && fabrics.length === 0}}" text="暂无布料"></empty-state>
+  <loading loading="{{loading}}"></loading>
+</view>
