@@ -1,0 +1,26 @@
+# ============================================================
+# AI 热点分析 Workflow — Python 依赖列表
+# ============================================================
+# 使用方法：
+#   pip install -r requirements.txt
+#
+# 建议在虚拟环境中安装（新手跳过也行）：
+#   python -m venv venv
+#   source venv/bin/activate    # Mac/Linux
+#   venv\Scripts\activate       # Windows
+#   pip install -r requirements.txt
+# ============================================================
+
+# ---- HTTP 请求库 ----
+# 发送网络请求、调用 API、抓取网页
+# 比 Python 内置的 urllib 好用 10 倍
+requests>=2.31.0
+
+# ---- OpenAI 兼容客户端 ----
+# 用来调用 DeepSeek API（DeepSeek 兼容 OpenAI 格式）
+# 也用于调用 SiliconFlow 的 LLM 接口
+openai>=1.12.0
+
+# ---- 环境变量管理 ----
+# 从 .env 文件加载配置到环境变量
+python-dotenv>=1.0.0

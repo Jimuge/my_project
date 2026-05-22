@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m py_compile modules/config.py)",
+      "Bash(python -m py_compile modules/weibo_scraper.py)",
+      "Bash(python -m py_compile modules/deepseek_analyzer.py)",
+      "Bash(python -m py_compile modules/title_generator.py)",
+      "Bash(python -m py_compile modules/image_generator.py)",
+      "Bash(python -m py_compile modules/email_sender.py)",
+      "Bash(python -m py_compile main.py)",
+      "Bash(pip install *)"
+    ]
+  }
+}
