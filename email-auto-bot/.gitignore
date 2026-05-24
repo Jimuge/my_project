@@ -22,3 +22,9 @@ replied_log.json
 # ---- IDE 配置 ----
 .vscode/
 .idea/
+
+# ---- 运行时日志 ----
+*.log
+
+# ---- Claude Code 工作目录 ----
+.claude/
