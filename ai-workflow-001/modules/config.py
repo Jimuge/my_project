@@ -55,8 +55,8 @@ class Config:
     # ------------------------------------------------------------------
     SILICONFLOW_API_KEY = os.getenv("SILICONFLOW_API_KEY", "")
     SILICONFLOW_BASE_URL = os.getenv("SILICONFLOW_BASE_URL", "https://api.siliconflow.cn/v1")
-    # 图片生成模型：Kolors（快手可图），中文理解能力强
-    SILICONFLOW_IMAGE_MODEL = os.getenv("SILICONFLOW_IMAGE_MODEL", "Kwai-Kolors/Kolors")
+    # 图片生成模型（可在 .env 中随时切换）
+    SILICONFLOW_IMAGE_MODEL = os.getenv("SILICONFLOW_IMAGE_MODEL", "Tongyi-MAI/Z-Image-Turbo")
     # 图片尺寸
     IMAGE_SIZE = os.getenv("IMAGE_SIZE", "1024x1024")
 
